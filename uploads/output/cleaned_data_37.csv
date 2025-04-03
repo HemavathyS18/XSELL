@@ -1,8 +1,0 @@
-Import Type,Import SFDC Campaign Type,Import SFDC Campaign Id,Import SFDC Campaign Status,Email Address
-campaignmember-so,Webinar,701123456789012,Attended,john.doe@email.com
-campaignmember-so,Trade Show,701112233445566,Sales Follow-Up,mike.johnson@email.com
-campaignmember-so,Conference,701667788990011,Sales Follow-Up,olivia.hall@email.com
-campaignmember-so,Event,701556677881234,Attended,taylor.swift@email.com
-campaignmember-so,Conference,701609091116989952,Sales Follow-Up,olivia.robert@email.com
-campaignmember-so,Webinar,701770000001122,Attended - On Demand,william.wealsey@email.com
-campaignmember-so,Social Media Campaign,701899900112133,Attended,daniel.wilson@email.com
