@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Upload Picklist file</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("upload-form").addEventListener("submit", function (event) {
+                let fileInput = document.getElementById("file-upload");
+                let template = document.getElementById("template").value;
+                let errorMessage = document.getElementById("error-message");
+
+                errorMessage.textContent = ""; // Clear previous errors
+
+                if (!template) {
+                    errorMessage.textContent = "Please select a template.";
+                    event.preventDefault(); // Stop form submission
+                    return;
+                }
+                
+                if (fileInput.files.length === 0) {
+                    errorMessage.textContent = "Please choose a file.";
+                    event.preventDefault(); // Stop form submission
+                    return;
+                }
+
+                let fileName = fileInput.files[0].name;
+                let fileExtension = fileName.split('.').pop().toLowerCase();
+
+                if (fileExtension !== "xlsx") {
+                    errorMessage.textContent = "Invalid file format! Please upload an .xlsx file.";
+                    event.preventDefault(); // Stop form submission
+                    return;
+                }
+
+                console.log("Form submitted successfully!"); // Debugging log
+            });
+        });
+    </script>
+</head>
+
+<header class="header">
+    <div class="logo">XSELL</div>
+    <nav>
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+    </nav>
+</header>
+
+<body>
+    <div class="container">
+        <h2>Upload Picklist File</h2>
+        <p>Welcome, <strong>{{ admin_name }}</strong></p>
+
+        <!-- File Upload Form -->
+        <form method="POST" action="{{ url_for('picklist') }}" enctype="multipart/form-data" id="upload-form">
+            <label for="template">Choose a Template:</label>
+            <select id="template" name="template">
+                <option value="" disabled selected>Select a template</option>
+                <option value="partner">Partner</option>
+                <option value="non-partner">Non-Partner</option>
+                <option value="campaign-memberstatus">Campaign MemberStatus</option>
+                <option value="content-syndication">Content Syndication</option>
+                <option value="qa-update">Q & A Update</option>
+                <option value="sales-campaign">Sales Campaign</option>
+            </select>
+
+            <input type="file" id="file-upload" name="file" accept=".xlsx">
+            <p id="error-message" style="color: red; font-weight: bold;"></p> <!-- Error Message -->
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>

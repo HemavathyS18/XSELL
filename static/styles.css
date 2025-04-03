@@ -1,0 +1,307 @@
+/* === General Styling === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    background: #f4f4f9;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: radial-gradient(farthest-side at left top, rgb(95, 40, 116), rgba(36, 41, 143, 0.8));
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.logout {
+    text-decoration: none;
+    color: white;
+    background-color: #ff4d4d;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    background-color: #cc0000;
+}
+
+
+/* === Container Styling === */
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    margin: 50px auto;
+    margin-top:150px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* === Headings === */
+h2, h3 {
+    color: rgba(36, 41, 143, 0.8);
+    margin-bottom: 20px;
+}
+
+/* === Form Elements === */
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* === Dropdown Styling === */
+select {
+    border: 2px solid #008DDA;
+    outline: none;
+    cursor: pointer;
+    background: white;
+}
+
+select:hover, select:focus {
+    background-color: #f0f8ff;
+}
+
+/* === File Input Styling === */
+input[type="file"] {
+    border: 2px dashed #008DDA;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+input[type="file"]:hover {
+    background: #f0f8ff;
+}
+
+/* === Buttons === */
+button {
+    background: radial-gradient(farthest-side at left top, rgb(95, 40, 116), rgba(36, 41, 143, 0.8));
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: radial-gradient(farthest-side at left top, rgb(95, 37, 118), rgba(34, 40, 146, 0.8));
+    transform: scale(1.05);
+}
+
+/* === Dashboard Page === */
+.dashboard-container {
+    text-align: center;
+}
+
+.dashboard-container p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #008DDA;
+    padding: 10px;
+    border: 2px solid #008DDA;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 20px;
+    background: #f0f8ff;
+}
+
+/* === Navigation Bar === */
+.navbar {
+    background: #008DDA;
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.navbar a:hover {
+    background: #0071b8;
+    border-radius: 5px;
+}
+
+/*process*/
+.processcontainer {
+    width: 100%;
+    height:100%;
+    min-height: 100vh; /* Allows it to expand dynamically */
+    background: white;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto; /* Enables scrolling if content overflows */
+
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.logs-container {
+    width: 65%;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    overflow: auto; /* Enables scrolling for large logs */
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    text-align: left;
+    flex-grow: 1; /* Ensures it takes available space */
+    max-height: 60vh; /* Prevents overflowing the container */
+}
+
+.buttons {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+h2, h3 {
+    color: rgba(36, 41, 143, 0.8);
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: radial-gradient(farthest-side at left top, rgb(95, 40, 116), rgba(36, 41, 143, 0.8));
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 200px;
+    text-align: center;
+}
+
+.btn:hover {
+    background: radial-gradient(farthest-side at left top, rgb(95, 37, 118), rgba(34, 40, 146, 0.8));
+}
+
+/* === Footer === */
+.footer {
+    margin-top: 30px;
+    padding: 15px;
+    background: #008DDA;
+    color: white;
+    font-size: 14px;
+}
+
+/* === Form Styling === */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds spacing between form elements */
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px; /* Ensures spacing between input fields */
+}
+
+/* === Adjust File Input and Select Box === */
+input[type="file"], select {
+    border: 2px solid #008DDA;
+    cursor: pointer;
+    background: white;
+    outline: none;
+}
+
+input[type="file"]:hover, select:hover {
+    background: #f0f8ff;
+}
+
+/* === Buttons === */
+button {
+    background:radial-gradient(farthest-side at left top, rgb(95, 40, 116), rgba(36, 41, 143, 0.8));
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px; /* Ensures space before submit button */
+}
+
+button:hover {
+    background: radial-gradient(farthest-side at left top, rgb(95, 37, 118), rgba(34, 40, 146, 0.8));
+    transform: scale(1.05);
+}
+
+
+/* === Responsive Design === */
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .navbar {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}

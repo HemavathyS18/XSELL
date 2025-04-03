@@ -1,0 +1,5 @@
+Import Type,Import SFDC Campaign Type,Import SFDC Campaign Id,Import SFDC Campaign Status,Email Address
+campaignmember-so,Social Media Campaign,70187223344556600,Attended,daniel.wilson@splunk.com
+campaignmember-so,Paid Ad,702112233445566,Sales Follow-Up,ethan.thomas@email.com
+campaignmember-so,Event,70187223344556600,Attended,isabella.clark@email.com
+campaignmember-so,Conference,702334455667788,Registered,logan.robinson@email.com

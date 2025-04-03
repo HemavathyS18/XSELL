@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<header class="header">
+    <div class="logo">XSELL</div>
+    <nav>
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+    </nav>
+</header>
+
+<body>
+    <div class="container">
+        <h2>Add a new Admin</h2>
+        <form action="/admin" method="POST">
+            <input type="name" name="name" placeholder="Enter your Name" required>
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Add Admin</button>
+        </form>
+        
+    </div>
+</body>
+</html>

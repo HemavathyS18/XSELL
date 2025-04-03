@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Processing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<header class="header">
+    <div class="logo">XSELL</div>
+    <nav>
+        <a href="{{ url_for('upload') }}" class="logout">Upload Files</a>
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+    </nav>
+</header>
+<body>
+
+    <div class="processcontainer">
+        <h2>File Processing Completed</h2>
+        <h3>Admin: {{ admin_name }}</h3>
+
+        <div class="content">
+            <!-- Logs Section (Left Side) -->
+            <div class="logs-container">
+                <h3>Data Profiling Logs</h3>
+                {{ logs }}
+            </div>
+
+            <!-- Buttons Section (Right Side) -->
+            <div class="buttons">
+                <h3>Download Cleaned File</h3> 
+                <a href="{{ url_for('view_con_file', fid=file['fid']) }}" target="_blank" class="btn">Download Cleaned CSV</a>
+
+                <h3>Download Error File</h3> 
+                <a href="{{ url_for('view_error_file', fid=file['fid']) }}" target="_blank" class="btn">Download Error Files</a>  
+            </div>
+        </div>
+    </div>
+</body>
+</html>

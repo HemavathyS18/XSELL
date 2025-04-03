@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<header class="header">
+    <div class="logo">XSELL</div>
+    <nav>
+        <a href="{{ url_for('admin') }}" class="logout">Add Admin</a>
+        <a href="{{ url_for('picklist') }}" class="logout">Upload picklist</a>
+        <a href="{{ url_for('upload') }}" class="logout">Upload Files</a>
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+    </nav>
+</header>
+
+<body>
+    <div class="container">
+        <h2>Dashboard</h2>
+        <p>Welcome, <strong>{{ admin_name }}</strong></p> 
+
+        <h3>Latest Uploaded File:</h3>
+        <p id="file-name">
+            {% if files %}
+                {{ files[-1].fname }} <!-- Display the most recent file -->
+            {% else %}
+                No file uploaded.
+            {% endif %}
+        </p>
+
+        <h3>All Uploaded Files</h3>
+        <ul>
+            {% for file in files %}
+                <li>
+                    <a href="{{ url_for('view_file', fid=file.fid) }}" target="_blank">
+                        {{ file.fname }}
+                    </a>
+        
+                    {% if file.fid in processed_fids %}
+                        <a href="{{ url_for('processed', fid=file.fid) }}">
+                            <button>Processed</button>
+                        </a>
+                        <a href="{{ url_for('remove', fid=file.fid) }}" onclick="return confirm('Are you sure you want to remove this file?');">
+                            <button class="logout">Remove</button>
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('process', fid=file.fid) }}">
+                            <button>Process</button>
+                        </a>
+                        <a href="{{ url_for('remove', fid=file.fid) }}" onclick="return confirm('Are you sure you want to remove this file?');">
+                            <button class="logout">Remove</button>
+                        </a>
+                    {% endif %}
+                </li>
+            {% else %}
+                <p>No files uploaded yet.</p>
+            {% endfor %}
+        </ul>                
+    </div>
+</body>
+</html>
